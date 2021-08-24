@@ -1,0 +1,3 @@
+Server:
+  RunMode: release
+  HttpPort: 8090
