@@ -112,25 +112,7 @@ func initConfigure() *viper.Viper {
 }
 
 func main() {
-	fmt.Println(GetMonthDay(20))
+
 }
 
 //3,15,10 首位3表示每月，1-28表示1-28号（注意有些月份没有29，30，31号所以不能配置），10表示10点
-func Unix2time(tmp int64) string {
-	return time.Unix(tmp, 0).Format("2006-01-02 15:04:05")
-}
-
-//获取本月几号的零点时间，若是大于，则取下周
-func GetMonthDay(day int) int64 {
-	currentYear, currentMonth, currentDay := time.Now().Date()
-	if currentDay >= day {
-		return GetNextMonthDay(day)
-	}
-	return time.Date(currentYear, currentMonth, 1, 0, 0, 0, 0, time.Now().Location()).AddDate(0, 0, day-1).Unix()
-}
-
-//获取下个月几号零点的时间戳
-func GetNextMonthDay(day int) int64 {
-	currentYear, currentMonth, _ := time.Now().Date()
-	return time.Date(currentYear, currentMonth, 1, 0, 0, 0, 0, time.Now().Location()).AddDate(0, 1, day-1).Unix()
-}
