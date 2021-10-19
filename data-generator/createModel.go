@@ -286,7 +286,7 @@ func NewData(dir string) *structure.Data {
 
 func Get() *structure.Data {
 	if dataManager == nil {
-		zaplogger.Sugar().Fatal("error: nil dataManager, please call New() before Get()")
+		fmt.Println("error: nil dataManager, please call New() before Get()")
 	}
 	return dataManager
 }`, projectName)
