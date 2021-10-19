@@ -10,7 +10,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	sq "github.com/qiankun/squirrel"
+	sq "github.com/Shanghai-Lunara/squirrel"
 	model "github.com/qiankun/{{.Project}}/{{.PackagePath}}"
 	"strings"
 )
