@@ -259,7 +259,7 @@ func createData() {
 
 import (
 	"encoding/json"
-	"github.com/1975210542/%s/data/structure"
+	"github.com/qiankungao/%s/data/structure"
 	"fmt"
 	"io/ioutil"
 	"os"
