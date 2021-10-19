@@ -259,8 +259,8 @@ func createData() {
 
 import (
 	"encoding/json"
-	"github.com/Shanghai-Lunara/%s/data/structure"
-	"github.com/Shanghai-Lunara/pkg/zaplogger"
+	"github.com/1975210542/werewolfKill/data/structure"
+	"fmt"
 	"io/ioutil"
 	"os"
 )
@@ -299,7 +299,7 @@ func (d *Data) load%s() {
 	f, err := os.Open(directory +"/%s.json")
 
 	if err != nil {
-		zaplogger.Sugar().Fatal(err)
+		fmt.Println("err:",err)
 	}
 	content, _ := ioutil.ReadAll(f)
 	var tmp map[int32]*structure.%s
