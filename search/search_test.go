@@ -71,8 +71,8 @@ import (
 ////测试二分查找与bitMap的性能
 func BenchmarkBitMap(b *testing.B) {
 
-	bit := NewBitmap(100000)
-	for i := 0; i < 100000; i++ {
+	bit := NewBitmap(100)
+	for i := 0; i < 100; i++ {
 		bit.Add(uint64(i))
 	}
 	for i := 0; i < b.N; i++ {
@@ -81,9 +81,9 @@ func BenchmarkBitMap(b *testing.B) {
 
 }
 func BenchmarkBiany(b *testing.B) {
-	array := make([]int, 100000)
+	array := make([]int, 100)
 
-	for i := 0; i < 100000; i++ {
+	for i := 0; i < 100; i++ {
 		array[i] = i
 
 	}
@@ -91,5 +91,4 @@ func BenchmarkBiany(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SearchFirstGreaterElement(array, 4)
 	}
-
 }

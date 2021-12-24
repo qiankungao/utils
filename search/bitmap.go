@@ -25,8 +25,10 @@ func NewBitmap(maxNum uint64) *bitmap {
 
 // 填入数字
 func (b *bitmap) Add(num uint64) {
+	//获取这个数的index和pos
 	byteIndex, bitPos := b.offset(num)
 	// 1 左移 bitPos 位 进行 按位或 (置为 1)
+	//加入其实就是把 1左移pos位然后和b.bits[index] 或
 	b.bits[byteIndex] |= bitmask[bitPos]
 	b.bitCount++
 }
@@ -34,7 +36,7 @@ func (b *bitmap) Add(num uint64) {
 // 清除填入的数字
 func (b *bitmap) Del(num uint64) {
 	byteIndex, bitPos := b.offset(num)
-	// 重置为空位 (重置为 0)
+	//清除就是把1左移pos,取反，然后在 &
 	b.bits[byteIndex] &= ^bitmask[bitPos]
 	b.bitCount--
 }
