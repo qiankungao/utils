@@ -2,7 +2,7 @@ package time
 
 import (
 	"fmt"
-	"github.com/1975210542/utils/convert"
+	"github.com/qiankungao/utils/convert"
 	"time"
 )
 //时间戳转日期

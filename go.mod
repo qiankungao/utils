@@ -1,4 +1,4 @@
-module github.com/1975210542/utils
+module github.com/qiankungao/utils
 
 go 1.15
 
